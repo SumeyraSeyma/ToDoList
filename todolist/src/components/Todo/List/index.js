@@ -21,7 +21,7 @@ function List({todos,setTodos}) {
         const updatedCheckedItems = checkedItems.filter((_, i) => i !== index);
         setCheckedItems(updatedCheckedItems);
 
-        alert('You clicked the delete button')
+        alert('You deleted the task');
       };
  
 
