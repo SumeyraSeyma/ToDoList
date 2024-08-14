@@ -64,3 +64,17 @@ button:hover{
     color: white;
     padding: 5px 10px;
 }
+
+#son:hover{
+    background-color: rgb(147, 79, 237);
+}
+
+#son:disabled{
+    background-color: rgb(156, 95, 235);
+    color: white;
+}
+
+#son:disabled:hover{
+    background-color: rgb(156, 95, 235);
+}
+

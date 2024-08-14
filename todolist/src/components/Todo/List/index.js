@@ -11,7 +11,7 @@ function List({todos,setTodos}) {
     updatedCheckedItems[index] = !updatedCheckedItems[index];
     setCheckedItems(updatedCheckedItems);
 
-    alert('You clicked the checkbox');
+    alert('Your task is completed');
     }
 
     const onClickDelete = (index) => {
