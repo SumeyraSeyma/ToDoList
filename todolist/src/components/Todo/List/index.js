@@ -33,7 +33,7 @@ function List({todos,setTodos}) {
             {
                 todos.map((todo,i)=>
                     <li key={i} style={{ textDecoration: checkedItems[i] ? 'line-through' : 'none', 
-                      fontStyle: checkedItems[i] ? 'italic' : 'normal',
+                      fontStyle: checkedItems[i] ? 'normal' : 'oblique',
                       color: checkedItems[i] ? 'gray' : 'black' }} >
                         {todo.title}
                         <input

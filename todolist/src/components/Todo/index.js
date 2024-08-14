@@ -19,7 +19,7 @@ function Todo() {
 
   return (
     <div id='container'>
-        <h1>Todos</h1>
+        <h1 className='hh'>Todos</h1>
         <Form addTodos ={setTodos} todos={todos} />
         <List todos={todos} setTodos={setTodos} />
         

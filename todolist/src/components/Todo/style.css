@@ -45,8 +45,6 @@ ul,li{
 #checkbox{
     margin-left:auto;
     accent-color: rgb(156, 95, 235);
-    
-
 }
 
 
@@ -83,3 +81,7 @@ button:hover{
     background-color: rgb(156, 95, 235);
 }
 
+.hh{
+    color: rgb(156, 95, 235);
+    opacity: 0.8;
+}
