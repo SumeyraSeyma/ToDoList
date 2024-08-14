@@ -28,18 +28,21 @@ function List({todos,setTodos}) {
 
   return (
     <div>
-        <ul>
+        <ul className='list'>
 
             {
                 todos.map((todo,i)=>
-                    <li key={i} style={{ textDecoration: checkedItems[i] ? 'line-through' : 'none' }} >
+                    <li key={i} style={{ textDecoration: checkedItems[i] ? 'line-through' : 'none', 
+                      fontStyle: checkedItems[i] ? 'italic' : 'normal',
+                      color: checkedItems[i] ? 'gray' : 'black' }} >
                         {todo.title}
                         <input
+                        id='checkbox'
                         checked={checkedItems[i]}
                         onChange={() => onClickCheckbox(i)}
                         type='checkbox'
                         />
-                        <button
+                        <button className='delete'
                         onClick={() => onClickDelete(i)}
                         >Delete</button>
                     </li >)
@@ -50,7 +53,7 @@ function List({todos,setTodos}) {
 
         </ul>
 
-        <p>
+        <p id='son'>
         {todos.length} items left
       </p>
 

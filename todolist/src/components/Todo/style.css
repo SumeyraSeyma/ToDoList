@@ -1,0 +1,66 @@
+#container{
+    
+  background-color: aliceblue;
+  width: 100%;
+  max-width: 500px; /* Bileşenin maksimum genişliğini sınırlandırır */
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+
+}
+
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.todo-input{
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(156, 95, 235);
+    border-radius: 5px;
+}
+
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.list{
+    margin: 15px 0;
+}
+
+.list > li{
+    background-color: rgb(201, 238, 185);
+    padding: 5px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#checkbox{
+    margin-left:auto;
+}
+
+button{
+  background-color: rgb(156, 95, 235);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: rgb(147, 79, 237);
+}
+
+#son{
+    background-color: rgb(156, 95, 235);
+    color: white;
+    padding: 5px 10px;
+}

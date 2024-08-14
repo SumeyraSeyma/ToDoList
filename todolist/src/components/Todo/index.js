@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react'
+
 import Form from './Form'
 import List from './List'
+import React, { useEffect,useState } from 'react'
+
+import './style.css'
 
 function Todo() {
-    const [todos, setTodos] = React.useState([
+    const [todos, setTodos] = useState([
         {title: 'Learn React'},
         {title: 'Learn Firebase'},
         {title: 'Learn GraphQL'}
@@ -15,8 +18,8 @@ function Todo() {
     }, [todos])
 
   return (
-    <div>
-        <h1>Todo</h1>
+    <div id='container'>
+        <h1>Todos</h1>
         <Form addTodos ={setTodos} todos={todos} />
         <List todos={todos} setTodos={setTodos} />
         

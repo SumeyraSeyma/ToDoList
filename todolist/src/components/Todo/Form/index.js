@@ -40,6 +40,7 @@ function Form({addTodos, todos}) {
         
         <div>
         <input name='title'
+        className='todo-input'
         value={form.title} 
         placeholder='What needs to be done?'
         onChange={onChangeInput} />
