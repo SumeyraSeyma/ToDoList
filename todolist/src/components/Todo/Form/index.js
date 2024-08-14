@@ -24,6 +24,7 @@ function Form({addTodos, todos}) {
         e.preventDefault()
 
         if (form.title === '') {
+            alert('Enter something valid!');
             return false;
         }
 
