@@ -39,12 +39,17 @@ function Form({addTodos, todos}) {
     <form>
         
         <div>
-        <input name='title'
+        <textarea name='title'
         className='todo-input'
         value={form.title} 
         placeholder='What needs to be done?'
-        onChange={onChangeInput} />
-        <button onClick={onSubmit}>Add</button>
+        onChange={onChangeInput}
+        onKeyDown={(e) => {
+            if (e.key === 'Escape') {
+                setForm(initialFormValues);
+            }
+            }}/>
+        <button className='btn-form' onClick={onSubmit}>Add</button>
         </div>
 
 

@@ -85,3 +85,9 @@ button:hover{
     color: rgb(156, 95, 235);
     opacity: 0.8;
 }
+
+.todo-input, btn-form{
+    display: inline-block;
+    vertical-align: middle; /* Dikeyde hizalama */
+    margin-right: 10px; /* Aradaki boşluk */
+}
