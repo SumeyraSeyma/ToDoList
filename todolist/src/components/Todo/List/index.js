@@ -53,22 +53,25 @@ function List({todos,setTodos}) {
               fontStyle: checkedItems[i] ? 'normal' : 'oblique',
               color: checkedItems[i] ? 'gray' : 'black',
               cursor: !checkedItems[i] ? 'pointer' : 'default',
+              whiteSpace: 'pre-wrap',
             }}
             onClick={() => !checkedItems[i] && onClickEdit(i)}
           >
             {editIndex === i ? (
-              <input
-                type="text"
+              <textarea
                 value={tempTitle}
                 onChange={(e) => setTempTitle(e.target.value)}
                 onBlur={() => onSaveEdit(i)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    onSaveEdit(i);
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    setTempTitle(tempTitle + '\n');
                   } else if (e.key === 'Escape') {
                     onCancelEdit();
                   }
                 }}
+                onBlur={() => onSaveEdit(i)}
+                rows = '2'
                 autoFocus
               />
             ) : (
