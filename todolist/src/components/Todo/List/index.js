@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 
 
-
-
 function List({todos,setTodos}) {
     const [checkedItems, setCheckedItems] = useState(new Array(todos.length).fill(false));
+    const [editIndex, setEditIndex] = useState(null);
+    const [tempTitle, setTempTitle] = useState('');
 
   const onClickCheckbox = (index) => {
     const updatedCheckedItems = [...checkedItems];
@@ -23,41 +23,74 @@ function List({todos,setTodos}) {
 
         alert('You deleted the task');
       };
+
+    const onClickEdit=(index)=>{
+        setEditIndex(index);
+        setTempTitle(todos[index].title);
+    }
+
+    const onSaveEdit=(index)=>{
+        const updatedTodos = [...todos];
+        updatedTodos[index].title = tempTitle;
+        setTodos(updatedTodos);
+        setEditIndex(null);
+    };
+
+    const onCancelEdit=()=>{
+        setEditIndex(null);
+    };
  
 
 
   return (
     <div>
-        <ul className='list'>
+    <ul className="list">
+      {todos.map((todo, i) => (
+        <li key={i}>
+          <span
+            style={{
+              textDecoration: checkedItems[i] ? 'line-through' : 'none',
+              fontStyle: checkedItems[i] ? 'normal' : 'oblique',
+              color: checkedItems[i] ? 'gray' : 'black',
+              cursor: !checkedItems[i] ? 'pointer' : 'default',
+            }}
+            onClick={() => !checkedItems[i] && onClickEdit(i)}
+          >
+            {editIndex === i ? (
+              <input
+                type="text"
+                value={tempTitle}
+                onChange={(e) => setTempTitle(e.target.value)}
+                onBlur={() => onSaveEdit(i)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    onSaveEdit(i);
+                  } else if (e.key === 'Escape') {
+                    onCancelEdit();
+                  }
+                }}
+                autoFocus
+              />
+            ) : (
+              todo.title
+            )}
+          </span>
+          <input
+            id="checkbox"
+            checked={checkedItems[i]}
+            onChange={() => onClickCheckbox(i)}
+            type="checkbox"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button className="delete" onClick={() => onClickDelete(i)}>
+            Delete
+          </button>
+        </li>
+      ))}
+    </ul>
 
-            {
-                todos.map((todo,i)=>
-                    <li key={i} style={{ textDecoration: checkedItems[i] ? 'line-through' : 'none', 
-                      fontStyle: checkedItems[i] ? 'normal' : 'oblique',
-                      color: checkedItems[i] ? 'gray' : 'black' }} >
-                        {todo.title}
-                        <input
-                        id='checkbox'
-                        checked={checkedItems[i]}
-                        onChange={() => onClickCheckbox(i)}
-                        type='checkbox'
-                        />
-                        <button className='delete'
-                        onClick={() => onClickDelete(i)}
-                        >Delete</button>
-                    </li >)
-            }
-            
-
-            
-
-        </ul>
-
-        <p id='son'>
-        {todos.length} items left
-      </p>
-
-    </div>
+    <p id="son">{todos.length} items left</p>
+  </div>
   )
 }
 
