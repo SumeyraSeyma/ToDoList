@@ -84,7 +84,8 @@ function List({todos,setTodos}) {
             type="checkbox"
             onClick={(e) => e.stopPropagation()}
           />
-          <button className="delete" onClick={() => onClickDelete(i)}>
+          <button className="delete" onClick={() => onClickDelete(i)}
+            style={{ width: '80px', height: '30px' }}>
             Delete
           </button>
         </li>
