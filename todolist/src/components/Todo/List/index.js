@@ -1,8 +1,18 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 
 
 function List({todos,setTodos}) {
-    const [checkedItems, setCheckedItems] = useState(new Array(todos.length).fill(false));
+    const [checkedItems, setCheckedItems] = useState(() => {
+      // Local Storage'dan checked items (tik işaretleri) alıyoruz
+      const savedCheckedItems = localStorage.getItem('checkedItems');
+      return savedCheckedItems ? JSON.parse(savedCheckedItems) : new Array(todos.length).fill(false);
+  });
+
+  useEffect(() => {
+    // checked items'ı Local Storage'a kaydediyoruz
+    localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
+}, [checkedItems]);
+
     const [editIndex, setEditIndex] = useState(null);
     const [tempTitle, setTempTitle] = useState('');
 
