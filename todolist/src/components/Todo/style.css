@@ -42,10 +42,36 @@ ul,li{
     justify-content: space-between;
 }
 
-.checkbox{
-    margin-left:auto;
-    accent-color: rgb(156, 95, 235);
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    appearance: none; /* Varsayılan stilin kaldırılması */
+    background-color: #fff;
+    border: 2px solid rgb(156, 95, 235);
+    border-radius: 50%; /* Daire yapmak için */
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    margin-left: auto;
 }
+
+input[type="checkbox"]:checked {
+    background-color: rgb(156, 95, 235);
+    border-color: rgb(156, 95, 235);
+}
+
+input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 12px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
 
 
 
