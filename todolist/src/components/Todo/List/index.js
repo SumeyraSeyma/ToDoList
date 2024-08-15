@@ -61,7 +61,6 @@ function List({todos,setTodos}) {
               <textarea
                 value={tempTitle}
                 onChange={(e) => setTempTitle(e.target.value)}
-                onBlur={() => onSaveEdit(i)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
