@@ -20,7 +20,7 @@
 .todo-input{
     padding: 5px;
     margin-bottom: 10px;
-    border: 1px solid rgb(156, 95, 235);
+    border: 1px solid rgb(228, 134, 147);
     border-radius: 5px;
 }
 
@@ -47,7 +47,7 @@ input[type="checkbox"] {
     height: 20px;
     appearance: none; /* Varsayılan stilin kaldırılması */
     background-color: #fff;
-    border: 2px solid rgb(156, 95, 235);
+    border: 2px solid rgb(228, 134, 147);
     border-radius: 50%; /* Daire yapmak için */
     position: relative;
     cursor: pointer;
@@ -56,8 +56,8 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    background-color: rgb(156, 95, 235);
-    border-color: rgb(156, 95, 235);
+    background-color: rgb(228, 134, 147);
+    border-color: rgb(228, 134, 147);
 }
 
 input[type="checkbox"]:checked::before {
@@ -76,7 +76,7 @@ input[type="checkbox"]:checked::before {
 
 
 button{
-  background-color: rgb(156, 95, 235);
+  background-color: rgb(228, 134, 147);
   color: white;
   padding: 5px 10px;
   border: none;
@@ -85,30 +85,30 @@ button{
 }
 
 button:hover{
-  background-color: rgb(147, 79, 237);
+  background-color: rgb(228, 134, 147);
 }
 
 #son{
-    background-color: rgb(156, 95, 235);
+    background-color: rgb(228, 134, 147);
     color: white;
     padding: 5px 10px;
 }
 
 #son:hover{
-    background-color: rgb(147, 79, 237);
+    background-color: rgb(228, 134, 147);
 }
 
 #son:disabled{
-    background-color: rgb(156, 95, 235);
+    background-color: rgb(228, 134, 147);
     color: white;
 }
 
 #son:disabled:hover{
-    background-color: rgb(156, 95, 235);
+    background-color: rgb(228, 134, 147);
 }
 
 .hh{
-    color: rgb(156, 95, 235);
+    color: rgb(228, 134, 147);
     opacity: 0.8;
 }
 
