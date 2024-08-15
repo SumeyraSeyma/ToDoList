@@ -76,7 +76,7 @@ function List({todos,setTodos}) {
             )}
           </span>
           <input
-            id="checkbox"
+            className="checkbox"
             checked={checkedItems[i]}
             onChange={() => onClickCheckbox(i)}
             type="checkbox"

@@ -42,7 +42,7 @@ ul,li{
     justify-content: space-between;
 }
 
-#checkbox{
+.checkbox{
     margin-left:auto;
     accent-color: rgb(156, 95, 235);
 }
