@@ -32,6 +32,8 @@ ul,li{
 
 .list{
     margin: 15px 0;
+    overflow-y: auto;
+    max-height: 400px;
 }
 
 .list > li{
