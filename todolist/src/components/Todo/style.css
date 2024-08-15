@@ -35,7 +35,7 @@ ul,li{
 }
 
 .list > li{
-    background-color: rgb(201, 238, 185);
+    background-color: #B0E0E6;
     padding: 5px;
     margin-bottom: 2px;
     display: flex;
