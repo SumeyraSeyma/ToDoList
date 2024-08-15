@@ -110,6 +110,7 @@ button:hover{
 .hh{
     color: rgb(228, 134, 147);
     opacity: 0.8;
+    font-style: italic;
 }
 
 .todo-input, btn-form{
