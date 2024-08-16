@@ -1,4 +1,9 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
+
+
 
 
 function List({todos,setTodos}) {
@@ -19,19 +24,38 @@ function List({todos,setTodos}) {
   const onClickCheckbox = (index) => {
     const updatedCheckedItems = [...checkedItems];
     updatedCheckedItems[index] = !updatedCheckedItems[index];
+
+    if(updatedCheckedItems[index]===true){
+        toast('Task completed',{
+          position: "top-center",
+          color: 'rgb(228, 134, 147)',
+          autoClose: 2000,
+          closeOnClick: true,
+        });
+        
+    }
+
     setCheckedItems(updatedCheckedItems);
 
-    alert('Your task is completed');
+    
     }
 
     const onClickDelete = (index) => {
         const updatedTodos = [...todos];
         updatedTodos.splice(index, 1);
         setTodos(updatedTodos);  // Üst bileşende todos'u güncellemek için
-        const updatedCheckedItems = checkedItems.filter((_, i) => i !== index);
+        const updatedCheckedItems = [...checkedItems];
+        updatedCheckedItems.splice(index, 1);
         setCheckedItems(updatedCheckedItems);
+      
+        toast.warn('Task deleted',{
+          position: "top-center",
+          autoClose: 2000,
+          closeOnClick: true,
 
-        alert('You deleted the task');
+        });
+
+
       };
 
     const onClickEdit=(index)=>{
@@ -59,13 +83,16 @@ function List({todos,setTodos}) {
         <li key={i}>
           <span
             style={{
+              whiteSpace: 'normal',
+              wordBreak: 'break-word',
+              overflowWrap: 'break-word',
+              width: '85%',
               textDecoration: checkedItems[i] ? 'line-through' : 'none',
               fontStyle: checkedItems[i] ? 'normal' : 'oblique',
               color: checkedItems[i] ? 'gray' : 'black',
-              cursor: !checkedItems[i] ? 'pointer' : 'default',
               whiteSpace: 'pre-wrap',
             }}
-            onClick={() => !checkedItems[i] && onClickEdit(i)}
+            
           >
             {editIndex === i ? (
               <textarea
@@ -94,6 +121,19 @@ function List({todos,setTodos}) {
             type="checkbox"
             onClick={(e) => e.stopPropagation()}
           />
+          {!checkedItems[i] &&(
+          <FontAwesomeIcon
+              icon={faPen}
+              onClick={() => onClickEdit(i)}
+              style={{
+                cursor: editIndex === i ? 'not-allowed' : 'pointer',
+                pointerEvents: editIndex === i ? 'none' : 'auto',
+                marginLeft: '10px',
+                paddingRight: '10px',
+                opacity: '0.7',
+                
+              }}
+            />)}
           <button className="delete" onClick={() => onClickDelete(i)}
             style={{ width: '80px', height: '30px' }}>
             Delete
