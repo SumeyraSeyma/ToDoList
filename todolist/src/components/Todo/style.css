@@ -120,3 +120,36 @@ button:hover{
     vertical-align: middle; /* Dikeyde hizalama */
     margin-right: 10px; /* Aradaki boşluk */
 }
+
+@media (orientation: landscape) {
+    .container {
+      flex-direction: row;
+    }
+  
+    .form {
+      flex: 1;
+      max-width: 100%;
+    }
+  
+    .list {
+      flex: 2;
+      max-width: 100%;
+    }
+  
+    input, textarea, button {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* Dikey mod için (portrait) düzen */
+  @media (orientation: portrait) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .form {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
