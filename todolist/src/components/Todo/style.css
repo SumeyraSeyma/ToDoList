@@ -121,4 +121,17 @@ button:hover{
     margin-right: 10px; /* Aradaki boşluk */
 }
 
-
+/* Yatay mod için ayarlar, buraya herhangi bir özel stil eklemiyoruz */
+@media (orientation: landscape) {
+    .container {
+      flex-direction: column; /* Dikey hizalamayı koru */
+    }
+  
+    .form {
+      width: 100%; /* Tam genişlik */
+    }
+    
+    .list {
+      width: 100%; /* Tam genişlik */
+    }
+  }
