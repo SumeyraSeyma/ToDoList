@@ -79,6 +79,7 @@ function List({todos,setTodos}) {
 
   return (
     <div>
+      
     <ul className="list">
       {todos.map((todo, i) => (
         <li key={i}>
@@ -154,10 +155,9 @@ function List({todos,setTodos}) {
           </button>
         </li>
       ))}
-      <p id="son">{todos.length} items left</p>
+           
     </ul>
-
-    
+    <p id="son">{todos.length} items left</p>
   </div>
   )
 }
