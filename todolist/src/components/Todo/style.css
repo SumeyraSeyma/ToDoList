@@ -23,6 +23,14 @@
     margin-bottom: 10px;
     border: 1px solid rgb(228, 134, 147);
     border-radius: 5px;
+    border: ridge 2px;
+    padding: 5px;
+    min-width: 20em;
+    min-height: 5em;
+    overflow: auto;
+    max-width: 20em;
+    max-height: 5em;
+
 }
 
 ul,li{

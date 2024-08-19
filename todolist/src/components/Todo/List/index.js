@@ -87,6 +87,7 @@ function List({todos,setTodos}) {
               wordBreak: 'break-word',
               overflowWrap: 'break-word',
               width: '85%',
+              textAlign: 'left',
               textDecoration: checkedItems[i] ? 'line-through' : 'none',
               fontStyle: checkedItems[i] ? 'normal' : 'oblique',
               color: checkedItems[i] ? 'gray' : 'black',
@@ -97,7 +98,16 @@ function List({todos,setTodos}) {
             {editIndex === i ? (
               <textarea
                 value={tempTitle}
-                style={{width:'50%', height:'60px'}}
+                contentEditable='true'
+                style={{width:'50%',
+                   height:'60px',
+                   borderRidge: '2px',
+                   padding: '5px',
+                   minWidth: '20em',
+                   minHeight: '5em',
+                   maxHeight: '5em',
+                   maxWidth: '20em',
+                   overflow: 'auto',}}
                 onChange={(e) => setTempTitle(e.target.value)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {

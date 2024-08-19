@@ -42,7 +42,7 @@ function Form({addTodos, todos}) {
         <textarea name='title'
         className='todo-input'
         value={form.title}
-        style={{width:'50%', height:'60px'}} 
+        contentEditable='true'
         placeholder='What needs to be done?'
         onChange={onChangeInput}
         onKeyDown={(e) => {
