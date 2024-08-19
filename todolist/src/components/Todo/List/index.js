@@ -97,6 +97,7 @@ function List({todos,setTodos}) {
             {editIndex === i ? (
               <textarea
                 value={tempTitle}
+                style={{width:'50%', height:'60px'}}
                 onChange={(e) => setTempTitle(e.target.value)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
