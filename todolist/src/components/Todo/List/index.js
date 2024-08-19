@@ -2,6 +2,7 @@ import React,{useState,useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
+import '../style.css'
 
 
 
@@ -102,7 +103,7 @@ function List({todos,setTodos}) {
                    height:'60px',
                    borderRidge: '2px',
                    padding: '5px',
-                   minWidth: '20em',
+                   minWidth: '12em',
                    minHeight: '5em',
                    maxHeight: '5em',
                    maxWidth: '20em',
@@ -124,6 +125,7 @@ function List({todos,setTodos}) {
               todo.title
             )}
           </span>
+          {editIndex !== i && (
           <input
             className="checkbox"
             checked={checkedItems[i]}
@@ -131,11 +133,13 @@ function List({todos,setTodos}) {
             type="checkbox"
             onClick={(e) => e.stopPropagation()}
           />
+          )}
           {!checkedItems[i] &&(
           <FontAwesomeIcon
               icon={faPen}
               onClick={() => onClickEdit(i)}
               style={{
+                position: 'relative',
                 cursor: editIndex === i ? 'not-allowed' : 'pointer',
                 pointerEvents: editIndex === i ? 'none' : 'auto',
                 marginLeft: '10px',
