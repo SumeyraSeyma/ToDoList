@@ -108,7 +108,6 @@ button:hover{
     padding: 5px 10px;
     margin-top: 15px; /* Listenin altına mesafe ekler */
     text-align: center;
-    width: 100%;
 }
 
 #son:hover{
@@ -137,36 +136,42 @@ button:hover{
 }
 
 @media (orientation: landscape) {
-    .App {
-    height: 100vh;
-    }
-  
-    .list {
-    max-height: 300px;
-    }
+  .App {
+  height: 550px;
+  overflow-y: auto;
   }
 
-  @media (min-height: 1180px)  {
-    .list {
-      max-width: 600px; /* Tablet ekranında daha geniş görünüm */
-      min-height: 50vh; /* Boşlukları doldurmak için minimum yükseklik */
-    }
-    .hh{
-        padding-top: 20px;
-    }
+  .list {
+  max-height: 300px;
+  }
+}
 
+@media (min-height: 1180px) and (max-height: 1365px) {
+  .list {
+    max-width: 600px; /* Tablet ekranında daha geniş görünüm */
+    max-height: 650px;
+  }
+  .hh{
+      padding-top: 20px;
   }
 
-  @media (min-height: 750px) {
-    .list {
-      max-height: 400px; /* Daha yüksek ekranlarda daha fazla görünüm */
-    }
+}
+
+@media (min-height: 750px) and (max-height: 1179px) {
+  .list {
+    max-height: 400px; /* Daha yüksek ekranlarda daha fazla görünüm */
   }
+}
 
 
-  @media(max-height: 600px){
-    .list{
-        max-height: 200px;
-    }
+@media(max-height: 600px){
+  .list{
+      max-height: 200px;
   }
-  
+}
+
+@media(min-height: 1366px){
+  .list{
+      max-height: 800px;
+  }
+}
