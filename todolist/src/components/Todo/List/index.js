@@ -98,7 +98,6 @@ function List({todos,setTodos}) {
             {editIndex === i ? (
               <textarea
                 value={tempTitle}
-                contentEditable='true'
                 style={{width:'50%',
                    height:'60px',
                    borderRidge: '2px',
