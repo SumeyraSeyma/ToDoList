@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
+import { toast } from 'react-toastify'
 
 
 const initialFormValues = {title:''}
@@ -25,7 +26,11 @@ function Form({addTodos, todos}) {
         e.preventDefault()
 
         if (form.title === '') {
-            alert('Enter something valid!');
+            toast.error('Please enter a todo', {
+                position: "top-center",
+                autoClose: 2000,
+                closeOnClick: true,
+            })
             return false;
         }
 

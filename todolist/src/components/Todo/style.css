@@ -106,6 +106,9 @@ button:hover{
     background-color: rgb(228, 134, 147);
     color: white;
     padding: 5px 10px;
+    margin-top: 15px; /* Listenin altına mesafe ekler */
+    text-align: center;
+    width: 100%;
 }
 
 #son:hover{
@@ -166,3 +169,4 @@ button:hover{
         max-height: 200px;
     }
   }
+  

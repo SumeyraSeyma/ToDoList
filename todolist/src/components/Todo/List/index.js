@@ -79,6 +79,7 @@ function List({todos,setTodos}) {
 
   return (
     <div>
+          
       
     <ul className="list">
       {todos.map((todo, i) => (
@@ -153,7 +154,7 @@ function List({todos,setTodos}) {
             style={{ width: '80px', height: '30px' }}>
             Delete
           </button>
-        </li>
+          </li>
       ))}
            
     </ul>
