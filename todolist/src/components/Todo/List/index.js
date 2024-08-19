@@ -154,9 +154,10 @@ function List({todos,setTodos}) {
           </button>
         </li>
       ))}
+      <p id="son">{todos.length} items left</p>
     </ul>
 
-    <p id="son">{todos.length} items left</p>
+    
   </div>
   )
 }
