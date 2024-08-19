@@ -8,7 +8,7 @@
   padding: 20px;
   border-radius: 10px;
   overflow-x: hidden;
-    overflow-y: hidden;
+  overflow-y: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
 
 
@@ -142,4 +142,20 @@ button:hover{
     max-height: 300px;
     }
   }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .list {
+      max-width: 600px; /* Tablet ekranında daha geniş görünüm */
+      min-height: 50vh; /* Boşlukları doldurmak için minimum yükseklik */
+    }
+
+  }
+
+  @media (min-height: 750px) {
+    .list {
+      max-height: 400px; /* Daha yüksek ekranlarda daha fazla görünüm */
+    }
+  }
+
+
   
