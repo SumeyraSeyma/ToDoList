@@ -32,28 +32,27 @@ function Form({addTodos, todos}) {
                 position: "top-center",
                 autoClose: 2000,
                 closeOnClick: true,
-            })
-            return false;
-        
-        
-        }
-        else{
-            toast.success('Task added', {
-                position: 'bottom-right',
-                autoClose: 2000,
-                closeOnClick: true,
-            })
+            });
+            return;
         }
 
-        addTodos([...todos,form])
+        addTodos([...todos, form]);
 
-        
-    }
+            toast.success('Todo added', {
+            position: 'bottom-right',
+            autoClose: 2000,
+            closeOnClick: true,
+        });
+    
+            setForm(initialFormValues);
+};
+
+
 
 
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
         
         <div>
         <textarea name='title'
@@ -66,7 +65,7 @@ function Form({addTodos, todos}) {
                 setForm(initialFormValues);
             }
             }}/>
-        <button className='btn-form' onClick={onSubmit}>Add</button>
+        <button className='btn-form' type='submit'>Add</button>
         </div>
 
 
