@@ -14,10 +14,19 @@ function List({todos,setTodos}) {
       return savedCheckedItems ? JSON.parse(savedCheckedItems) : new Array(todos.length).fill(false);
   });
 
+   // Tamamlanmamış ve silinmemiş görevlerin sayısını tutan state
+   const [remainingTasks, setRemainingTasks] = useState(0);
+
   useEffect(() => {
     // checked items'ı Local Storage'a kaydediyoruz
     localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
 }, [checkedItems]);
+
+useEffect(() => {
+  // Tamamlanmamış ve silinmemiş görevlerin sayısını hesaplıyoruz
+  const remaining=(todos.filter((todo, i) => !checkedItems[i]).length);
+  setRemainingTasks(remaining);
+}, [todos, checkedItems]);
 
     const [editIndex, setEditIndex] = useState(null);
     const [tempTitle, setTempTitle] = useState('');
@@ -34,8 +43,6 @@ function List({todos,setTodos}) {
           autoClose: 2000,
           closeOnClick: true,
         });
-
-  
         
     }
 
@@ -172,7 +179,7 @@ function List({todos,setTodos}) {
       ))}
            
     </ul>
-    <p id="son">{todos.length} items left</p>
+    <p id="son">{remainingTasks} items left</p>
   </div>
   )
 }
