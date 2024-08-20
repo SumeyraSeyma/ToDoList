@@ -178,9 +178,28 @@ button:hover{
   }
 }
 
-@media(min-height:800)and(min-width:1280){
+@media(width: 1280px) and (height: 800px){
   .list{
-      max-height: 200px;
+      max-height: 500px;
+  }
+  #container{
+      max-height: 800px;
+      overflow-y: auto;
+  }
+  .App{
+      height: 100vh;
   }
 }
 
+@media(min-width:814px) and (min-height:801px){
+  .list{
+      max-height: 400px;
+  }
+  #container{
+      max-height: 800px;
+
+  }
+  .App{
+      height: 100vh;
+  }
+}
