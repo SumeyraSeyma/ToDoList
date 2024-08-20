@@ -46,6 +46,8 @@ ul,li{
     margin: 15px 0;
     overflow-y: auto;
     max-height: 275px;
+    overflow-wrap: break-word; /* Uzun metinlerin taşmasını engelle */
+    word-wrap: break-word; /* Uzun kelimelerin taşmasını engelle */
 }
 
 .list > li{
@@ -176,8 +178,9 @@ button:hover{
   }
 }
 
-@media(height:800)and(width:1280){
+@media(min-height:800)and(min-width:1280){
   .list{
       max-height: 200px;
   }
 }
+
