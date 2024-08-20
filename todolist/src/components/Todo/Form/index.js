@@ -20,6 +20,8 @@ function Form({addTodos, todos}) {
             ...form,
             [e.target.name]: e.target.value
         })
+
+
     }
 
     const onSubmit = (e) => {
@@ -32,6 +34,15 @@ function Form({addTodos, todos}) {
                 closeOnClick: true,
             })
             return false;
+        
+        
+        }
+        else{
+            toast.success('Task added', {
+                position: 'bottom-right',
+                autoClose: 2000,
+                closeOnClick: true,
+            })
         }
 
         addTodos([...todos,form])

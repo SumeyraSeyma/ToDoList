@@ -28,7 +28,7 @@ function List({todos,setTodos}) {
 
     if(updatedCheckedItems[index]===true){
         toast('Task completed',{
-          position: "top-center",
+          position: "bottom-right",
           color: 'rgb(228, 134, 147)',
           autoClose: 2000,
           closeOnClick: true,
@@ -50,7 +50,7 @@ function List({todos,setTodos}) {
         setCheckedItems(updatedCheckedItems);
       
         toast.warn('Task deleted',{
-          position: "top-center",
+          position: "bottom-right",
           autoClose: 2000,
           closeOnClick: true,
 
@@ -65,11 +65,22 @@ function List({todos,setTodos}) {
     }
 
     const onSaveEdit=(index)=>{
-        const updatedTodos = [...todos];
-        updatedTodos[index].title = tempTitle;
-        setTodos(updatedTodos);
-        setEditIndex(null);
+        
+        if(tempTitle.trim() !== ''){
+          const updatedTodos = [...todos];
+          updatedTodos[index].title = tempTitle;
+          setTodos(updatedTodos);
+          setEditIndex(null);
+        }
+        else{
+          toast.error('Please enter a todo', {
+            position: "bottom-right",
+            autoClose: 2000,
+            closeOnClick: true,
+        });
+
     };
+    }
 
     const onCancelEdit=()=>{
         setEditIndex(null);
