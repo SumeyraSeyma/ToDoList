@@ -25,6 +25,7 @@ function List({todos,setTodos}) {
   const onClickCheckbox = (index) => {
     const updatedCheckedItems = [...checkedItems];
     updatedCheckedItems[index] = !updatedCheckedItems[index];
+    
 
     if(updatedCheckedItems[index]===true){
         toast('Task completed',{
@@ -33,6 +34,8 @@ function List({todos,setTodos}) {
           autoClose: 2000,
           closeOnClick: true,
         });
+
+  
         
     }
 

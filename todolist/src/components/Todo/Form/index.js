@@ -27,9 +27,9 @@ function Form({addTodos, todos}) {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        if (form.title === '') {
+        if (form.title.trim() === '') {
             toast.error('Please enter a todo', {
-                position: "top-center",
+                position: "bottom-right",
                 autoClose: 2000,
                 closeOnClick: true,
             });
